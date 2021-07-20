@@ -21,14 +21,24 @@ repositories {
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+	mappings minecraft.officialMojangMappings()
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-
+	modImplementation group: "TechReborn", name: "TechReborn-1.17", version: "5.0.3-beta+build.72"
+	modImplementation group: "RebornCore", name: "RebornCore-1.17", version: "5.0.3-beta+build.72"
 	// PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
 	// You may need to force-disable transitiveness on them.
+
+	modApi("teamreborn:energy:${project.tr_energy_version}") {
+		transitive(false)
+	}
+	include("teamreborn:energy:${project.tr_energy_version}") {
+		transitive(false)
+	}
+
+
 }
 
 processResources {
@@ -38,6 +48,7 @@ processResources {
 		expand "version": project.version
 	}
 }
+
 
 tasks.withType(JavaCompile).configureEach {
 	// ensure that the encoding is set to UTF-8, no matter what the system default is

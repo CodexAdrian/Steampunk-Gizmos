@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "steampunkgizmos",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Steampunk Gizmos",
+  "description": "Steampunk Style tools and armor!",
   "authors": [
     "Me!"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://codexadrian.me/",
+    "sources": "https://github.com/CodexAdrian/Steampunk-Gizmos"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "me.codexadrian.steampunkgizmos.SteampunkGizmos"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "steampunkgizmos.mixin.json"
   ],
 
   "depends": {
